@@ -1,0 +1,77 @@
+@use "sass:map";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+$base-colors: (
+  "red": #c10000,
+  "blue": #0c6699,
+  "grey": #ede7df,
+  "yellow": #e8d31e,
+);
+
+$default-height: 16px;
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.black-bar {
+  height: $default-height;
+  background-color: black;
+}
+
+.first {
+  height: 111px;
+  .left-case {
+    width: 42%;
+    background-color: map.get($base-colors, "grey");
+  }
+  .right-case {
+    width: 58%;
+    background-color: map.get($base-colors, "blue");
+    border-left: $default-height solid black;
+  }
+}
+
+.second {
+  height: 292px;
+  .left-case {
+    width: 78%;
+    background-color: map.get($base-colors, "red");
+    border-right: $default-height solid black;
+  }
+  .right-case {
+    width: 22%;
+    background-color: map.get($base-colors, "grey");
+  }
+}
+
+.third {
+  height: 292px;
+  .left-case {
+    width: 78%;
+    background-color: map.get($base-colors, "grey");
+    border-right: $default-height solid black;
+  }
+  .right-case {
+    width: 22%;
+    background-color: map.get($base-colors, "grey");
+    border-left: 1px solid map.get($base-colors, "grey");
+  }
+}
+
+.fourth {
+  height: 111px;
+  .full-line {
+    height: 111px !important;
+    background-color: map.get($base-colors, "yellow");
+  }
+}
